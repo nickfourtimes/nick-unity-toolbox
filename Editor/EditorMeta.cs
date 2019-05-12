@@ -18,7 +18,7 @@ public class EditorMeta {
     [MenuItem(MENU_PREFIX + "Windows/Open Player Settings %#l", false, 0)]
     static void OpenPlayerSettings() {
 #if UNITY_2018_3_OR_NEWER
-        Selection.activeObject = Unsupported.GetSerializedAssetInterfaceSingleton("PlayerSettings");
+        SettingsService.OpenProjectSettings("Project/Player").Focus();
 #else
         EditorApplication.ExecuteMenuItem("Edit/Project Settings/Player");
 #endif
